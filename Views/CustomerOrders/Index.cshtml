@@ -1,0 +1,21 @@
+@using AspProjectOne.ViewModels
+@model CustomerOrderViewModel
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Müşteri Siparişleri</title>
+</head>
+<body>
+    <h1>@Model.Customer.FirstName @Model.Customer.LastName</h1>
+    <p>Email: @Model.Customer.Email</p>
+
+    <h2>Siparişler</h2>
+    <ul>
+        @foreach (var order in @Model.Orders)
+        {
+            <li>@order.ProductName - @order.Quantity adet - @order.Price TL</li>
+        }
+    </ul>
+</body>
+</html>
